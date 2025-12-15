@@ -49,56 +49,56 @@ Las tareas se almacenan como un arreglo de objetos en localStorage.
 ```
 ### Descripción de los campos
 
-id: identificador único de la tarea
+- id: identificador único de la tarea
 
-dueDate: fecha de entrega
+- dueDate: fecha de entrega
 
-time: hora de entrega
+- time: hora de entrega
 
-subject: materia o área académica
+- subject: materia o área académica
 
-category: etiqueta de clasificación
+- category: etiqueta de clasificación
 
-priority: nivel de prioridad (Alta, Media, Baja)
+- priority: nivel de prioridad (Alta, Media, Baja)
 
-status: estado de la tarea
+- status: estado de la tarea
 
-title: título de la tarea
+- title: título de la tarea
 
-description: descripción detallada
+- description: descripción detallada
 
-progress: nivel de avance (0–10)
+- progress: nivel de avance (0–10)
 
 ### Cómo ejecutar el proyecto localmente
 
-Descargar o clonar el repositorio.
+- Descargar o clonar el repositorio.
 
-Abrir el archivo index.html en un navegador web moderno.
+- Abrir el archivo index.html en un navegador web moderno.
 
 ### Cómo ejecutar el proyecto en GitHub Pages
 
-Subir el proyecto a un repositorio en GitHub.
+- Subir el proyecto a un repositorio en GitHub.
 
-Acceder a Settings → Pages.
+- Acceder a Settings → Pages.
 
-Seleccionar la rama main y la carpeta raíz (/root).
+- Seleccionar la rama main y la carpeta raíz (/root).
 
-Guardar los cambios.
+- Guardar los cambios.
 
-Acceder al enlace proporcionado por GitHub Pages.
+- Acceder al enlace proporcionado por GitHub Pages.
 
 ### Funcionalidades principales
 
-Registro de nuevas tareas
+- Registro de nuevas tareas
 
-Visualización de tareas en tarjetas
+- Visualización de tareas en tarjetas
 
-Edición de tareas existentes
+- Edición de tareas existentes
 
-Eliminación de tareas con confirmación
+- Eliminación de tareas con confirmación
 
-Persistencia de datos mediante localStorage
+- Persistencia de datos mediante localStorage
 
-Diseño responsive para escritorio y dispositivos móviles
+- Diseño responsive para escritorio y dispositivos móviles
 
 
