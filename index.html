@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tasky - Task Manager</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="layout">
+
+
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="logo-mark">🧾</div>
+        <div class="logo-text">Tasky</div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-item active" href="#"><span>🏠</span> Dashboard</a>
+        <a class="nav-item" href="#"><span>🗂️</span> Tasks</a>
+        <a class="nav-item" href="#"><span>🗓️</span> Calendar</a>
+        <a class="nav-item" href="#"><span>👥</span> Members</a>
+      </nav>
+    </aside>
+
+ 
+    <main class="main">
+
+
+      <header class="topbar">
+        <div class="search">
+          <span class="icon">🔎</span>
+          <input id="searchInput" type="text" placeholder="Search tasks" />
+        </div>
+
+        <div class="top-actions">
+          <button class="btn btn-light" id="previewBtn">Preview</button>
+
+          <select class="select" id="sortSelect" title="Sort">
+            <option value="dateAsc">Sort: Date ↑</option>
+            <option value="dateDesc">Sort: Date ↓</option>
+            <option value="prioDesc">Sort: Priority ↓</option>
+            <option value="prioAsc">Sort: Priority ↑</option>
+          </select>
+
+          <select class="select" id="filterSelect" title="Filter">
+            <option value="">Filter: All</option>
+            <option value="Alta">High</option>
+            <option value="Media">Medium</option>
+            <option value="Baja">Low</option>
+          </select>
+
+          <div class="avatars" title="Members">
+            <div class="avatar">A</div>
+            <div class="avatar">J</div>
+            <div class="avatar">Y</div>
+            <div class="avatar more">+2</div>
+            <button class="circle" id="addMemberBtn">+</button>
+          </div>
+
+          <button class="btn btn-primary" id="addTaskBtn">+ Add task</button>
+        </div>
+      </header>
+
+
+      <section class="board">
+
+        <div class="col" data-status="In Progress">
+          <div class="col-head">
+            <div class="col-title">
+              In Progress <span class="count" id="countProgress">0</span>
+            </div>
+            <button class="kebab" aria-label="menu">⋮</button>
+          </div>
+          <div class="col-body" id="colProgress"></div>
+        </div>
+
+        <div class="col" data-status="Completed Task">
+          <div class="col-head">
+            <div class="col-title">
+              Completed Task <span class="count" id="countCompleted">0</span>
+            </div>
+            <button class="kebab" aria-label="menu">⋮</button>
+          </div>
+          <div class="col-body" id="colCompleted"></div>
+        </div>
+
+        <div class="col" data-status="Over-Due">
+          <div class="col-head">
+            <div class="col-title">
+              Over-Due <span class="count" id="countOverdue">0</span>
+            </div>
+            <button class="kebab" aria-label="menu">⋮</button>
+          </div>
+          <div class="col-body" id="colOverdue"></div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal">
+      <div class="modal-head">
+        <div>
+          <h3 id="modalTitle">Add task</h3>
+          <p id="modalSubtitle">Create / edit tasks without leaving the board.</p>
+        </div>
+        <button class="circle" id="closeModalBtn" aria-label="close">✕</button>
+      </div>
+
+      <form id="taskForm" class="modal-body">
+        <input type="hidden" id="taskId" />
+
+        <div class="grid2">
+          <label>
+            Due date
+            <input type="date" id="dueDate" required />
+          </label>
+          <label>
+            Time
+            <input type="time" id="time" />
+          </label>
+        </div>
+
+        <div class="grid2">
+          <label>
+            Subject / Area
+            <input type="text" id="subject" placeholder="e.g. UX Design / Auditoría" required />
+          </label>
+          <label>
+            Category tag
+            <input type="text" id="category" placeholder="e.g. Development / UX Design" />
+          </label>
+        </div>
+
+        <div class="grid3">
+          <label>
+            Priority
+            <select id="priority" required>
+              <option value="Alta">High</option>
+              <option value="Media" selected>Medium</option>
+              <option value="Baja">Low</option>
+            </select>
+          </label>
+
+          <label>
+            Status
+            <select id="status" required>
+              <option value="In Progress" selected>In Progress</option>
+              <option value="Completed Task">Completed Task</option>
+              <option value="Over-Due">Over-Due</option>
+            </select>
+          </label>
+
+          <label>
+            Progress (0–10)
+            <input type="number" id="progress" min="0" max="10" value="0" />
+          </label>
+        </div>
+
+        <label>
+          Title
+          <input type="text" id="title" placeholder="e.g. User Flow" required />
+        </label>
+
+        <label>
+          Description
+          <textarea id="description" placeholder="Write details…"></textarea>
+        </label>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-light" id="deleteBtn">Delete</button>
+          <div class="spacer"></div>
+          <button type="button" class="btn btn-light" id="cancelBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="saveBtn">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
